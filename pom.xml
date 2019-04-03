@@ -19,6 +19,7 @@
     <modules>
         <module>apz-cloud-eureka</module>
         <module>apz-cloud-open-api</module>
+        <module>apz-service</module>
     </modules>
 
     <properties>
