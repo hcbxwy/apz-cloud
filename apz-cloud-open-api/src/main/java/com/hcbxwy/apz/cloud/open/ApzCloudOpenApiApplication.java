@@ -20,9 +20,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class ApzCloudOpenApplication {
+public class ApzCloudOpenApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApzCloudOpenApplication.class, args);
+        SpringApplication.run(ApzCloudOpenApiApplication.class, args);
     }
 }
