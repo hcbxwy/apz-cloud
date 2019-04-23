@@ -28,7 +28,16 @@
         <!-- apz cloud -->
         <apz.cloud.common.util.version>0.0.1-SNAPSHOT</apz.cloud.common.util.version>
         <apz.cloud.common.auth.version>0.0.1-SNAPSHOT</apz.cloud.common.auth.version>
+        <apz.cloud.common.web.version>0.0.1-SNAPSHOT</apz.cloud.common.web.version>
         <!-- The Third Part -->
+        <aspectjweaver.version>1.8.10</aspectjweaver.version>
+        <guava.version>27.1-jre</guava.version>
+        <fastjson.version>1.2.57</fastjson.version>
+        <commons-lang3.version>3.9</commons-lang3.version>
+        <commons-io.version>2.6</commons-io.version>
+        <swagger-annotations.version>1.5.22</swagger-annotations.version>
+        <log4j-over-slf4j.version>1.7.25</log4j-over-slf4j.version>
+        <persistence-api.version>2.2</persistence-api.version>
     </properties>
 
     <dependencyManagement>
@@ -50,6 +59,52 @@
                 <artifactId>apz-cloud-common-auth</artifactId>
                 <version>${apz.cloud.common.auth.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.hcbxwy</groupId>
+                <artifactId>apz-cloud-common-web</artifactId>
+                <version>${apz.cloud.common.web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectjweaver.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.swagger</groupId>
+                <artifactId>swagger-annotations</artifactId>
+                <version>${swagger-annotations.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>log4j-over-slf4j</artifactId>
+                <version>${log4j-over-slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>javax.persistence-api</artifactId>
+                <version>${persistence-api.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
