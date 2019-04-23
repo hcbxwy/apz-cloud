@@ -6,8 +6,11 @@
  * <li>Copyright ©2016-2019 广州职赢未来信息科技有限公司 All Rights Reserved.</li>
  * </ul>
  */
-package com.hcbxwy.apz.common.util;
+package com.hcbxwy.apz.common.web.util;
 
+import com.hcbxwy.apz.common.util.StringUtils;
+import com.hcbxwy.apz.common.web.enums.ResultCodeEnum;
+import com.hcbxwy.apz.common.web.exception.BusinessException;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.io.IOUtils;
 import org.apache.http.entity.ContentType;
@@ -42,7 +45,7 @@ public class ApiSignUtil {
     /**
      * API网关用于计算签名的密钥Key
      */
-    private static final String CA_PROXY_SIGN_SECRET_KEY = "X-Ca-Proxy-Signature-Secret-Key";
+    public static final String CA_PROXY_SIGN_SECRET_KEY = "X-Ca-Proxy-Signature-Secret-Key";
     /**
      * 签名算法HmacSha256
      */
@@ -104,7 +107,9 @@ public class ApiSignUtil {
 
         Mac hmacSha256 = Mac.getInstance(HMAC_SHA256);
         String secret = signSecretMap.get(headerMap.get(HTTP_HEADER_TO_LOWER_CASE ? CA_PROXY_SIGN_SECRET_KEY.toLowerCase() : CA_PROXY_SIGN_SECRET_KEY));
-
+        if (StringUtils.isBlank(secret)){
+            throw new BusinessException(ResultCodeEnum.SECRET_UNAUTHORIZED);
+        }
         byte[] keyBytes = secret.getBytes(ENCODING);
         hmacSha256.init(new SecretKeySpec(keyBytes, 0, keyBytes.length, HMAC_SHA256));
 

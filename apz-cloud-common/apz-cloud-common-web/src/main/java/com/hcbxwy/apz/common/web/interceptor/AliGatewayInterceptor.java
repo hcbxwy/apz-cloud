@@ -6,9 +6,12 @@
  * <li>Copyright ©2016-2019 广州职赢未来信息科技有限公司 All Rights Reserved.</li>
  * </ul>
  */
-package com.hcbxwy.apz.common.web.config;
+package com.hcbxwy.apz.common.web.interceptor;
 
-import com.hcbxwy.apz.common.util.ApiSignUtil;
+import com.hcbxwy.apz.common.web.util.ApiSignUtil;
+import com.hcbxwy.apz.common.util.StringUtils;
+import com.hcbxwy.apz.common.web.enums.ResultCodeEnum;
+import com.hcbxwy.apz.common.web.exception.BusinessException;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -17,30 +20,27 @@ import javax.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 /**
- * 接口权限拦截器
+ * 阿里云网关拦截器
  *
  * @author Billson
  * @since 2019/4/10 17:04
  */
 @Component
-public class AuthInterceptor extends HandlerInterceptorAdapter {
+public class AliGatewayInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         // 验证阿里云API网关签名
-//        if (!validSignature(request)){
-//            response.sendError(403,"InvalidSignature");
-//            response.setContentType("application/json; charset=utf-8");
-////            PrintWriter writer = response.getWriter();
-////            writer.print(JSONObject.toJSONString(obj, SerializerFeature.WriteMapNullValue,
-////                    SerializerFeature.WriteDateUseDateFormat));
-////            writer.close();
-////            response.flushBuffer();
-//
-//            return false;
-//        }
-//        System.out.println("请求地址：" + request.getServletPath());
-        return super.preHandle(request,response,handler);
+        if (StringUtils.isBlank(request.getHeader(ApiSignUtil.CA_PROXY_SIGN))){
+            throw new BusinessException(ResultCodeEnum.PARAM_SIGNATURE_IS_BLANK);
+        }
+        if (StringUtils.isBlank(request.getHeader(ApiSignUtil.CA_PROXY_SIGN_SECRET_KEY))){
+            throw new BusinessException(ResultCodeEnum.PARAM_SECRET_IS_BLANK);
+        }
+        if (!validSignature(request)) {
+            throw new BusinessException(ResultCodeEnum.INVALID_SIGNATURE);
+        }
+        return super.preHandle(request, response, handler);
     }
 
     /**

@@ -8,6 +8,7 @@
  */
 package com.hcbxwy.apz.common.web.constant;
 
+import com.hcbxwy.apz.common.web.enums.ApiStyleEnum;
 import com.hcbxwy.apz.common.web.enums.CallSourceEnum;
 
 /**

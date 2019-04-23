@@ -28,12 +28,15 @@ public enum ResultCodeEnum {
 
     // 400xx 参数错误
     PARAM_IS_INVALID(40001, "参数无效"),
+    PARAM_SIGNATURE_IS_BLANK(40002, "请求头缺少参数：X-Ca-Proxy-Signature"),
+    PARAM_SECRET_IS_BLANK(40003, "请求头缺少参数：X-Ca-Proxy-Signature-Secret-Key"),
 
     // 403xx 权限错误
     /**
      * 无效签名 InvalidSignature
      */
     INVALID_SIGNATURE(40300, "无效签名"),
+    SECRET_UNAUTHORIZED(40004, "请求头X-Ca-Proxy-Signature-Secret-Key权限不足"),
 
     // 500xx 服务端错误
     SYSTEM_INNER_ERROR(50001, "系统繁忙，请稍后重试");

@@ -27,8 +27,7 @@ public class UserController {
 
     @GetMapping("/test")
     public String test() {
-        int a = 10/0;
-        return "测试除数为0";
+        return "测试Get方法";
     }
 
     @PostMapping("/login")
