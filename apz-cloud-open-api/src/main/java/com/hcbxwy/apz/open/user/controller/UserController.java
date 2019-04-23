@@ -12,6 +12,8 @@ import com.hcbxwy.apz.common.web.annotation.ResponseResult;
 import com.hcbxwy.apz.open.user.vo.UserVo;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 /**
  * 用户模块controller
  *
@@ -25,11 +27,12 @@ public class UserController {
 
     @GetMapping("/test")
     public String test() {
-        return "测试成功";
+        int a = 10/0;
+        return "测试除数为0";
     }
 
     @PostMapping("/login")
-    public UserVo login(@RequestBody UserVo userVo) {
+    public UserVo login(@Valid @RequestBody UserVo userVo) {
         System.out.println("登录成功。登录信息为：" + userVo.toString());
         return userVo;
     }
