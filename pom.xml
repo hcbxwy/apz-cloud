@@ -20,6 +20,7 @@
         <module>apz-cloud-open-api</module>
         <module>apz-service</module>
         <module>apz-cloud-common</module>
+        <module>apz-cloud-open-gateway</module>
     </modules>
 
     <properties>

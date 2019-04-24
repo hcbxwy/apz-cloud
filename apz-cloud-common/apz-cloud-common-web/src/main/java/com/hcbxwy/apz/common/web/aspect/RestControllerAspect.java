@@ -40,8 +40,8 @@ import java.util.Objects;
  * @since 2019/4/22 14:46
  */
 @Slf4j
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class RestControllerAspect {
 
     /**

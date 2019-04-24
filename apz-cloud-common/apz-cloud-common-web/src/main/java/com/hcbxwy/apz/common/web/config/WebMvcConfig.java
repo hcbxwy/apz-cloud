@@ -36,7 +36,7 @@ public class WebMvcConfig extends WebMvcConfigurationSupport {
         // 响应结果控制拦截
         registry.addInterceptor(new ResponseResultInterceptor()).addPathPatterns(path);
         // 校验网关签名
-        registry.addInterceptor(new AliGatewayInterceptor()).addPathPatterns(path);
+//        registry.addInterceptor(new AliGatewayInterceptor()).addPathPatterns(path);
         super.addInterceptors(registry);
     }
 
