@@ -10,6 +10,7 @@ package com.hcbxwy.apz.open.user.controller;
 
 import com.hcbxwy.apz.common.web.annotation.ResponseResult;
 import com.hcbxwy.apz.open.user.vo.UserVo;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -25,9 +26,12 @@ import javax.validation.Valid;
 @RequestMapping("/users")
 public class UserController {
 
+    @Value("${spring.application.name}")
+    private String test;
+
     @GetMapping("/test")
     public String test() {
-        return "测试Get方法";
+        return "测试阿波罗配置：test=" + test;
     }
 
     @PostMapping("/login")

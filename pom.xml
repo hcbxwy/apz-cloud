@@ -21,15 +21,16 @@
         <module>apz-service</module>
         <module>apz-cloud-common</module>
         <module>apz-cloud-open-gateway</module>
+        <module>apz-cloud-auth-service</module>
     </modules>
 
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
         <!-- apz cloud -->
-        <apz.cloud.common.util.version>0.0.1-SNAPSHOT</apz.cloud.common.util.version>
-        <apz.cloud.common.auth.version>0.0.1-SNAPSHOT</apz.cloud.common.auth.version>
-        <apz.cloud.common.web.version>0.0.1-SNAPSHOT</apz.cloud.common.web.version>
+        <common.util.version>0.0.1-SNAPSHOT</common.util.version>
+        <common.auth.version>0.0.1-SNAPSHOT</common.auth.version>
+        <common.web.version>0.0.1-SNAPSHOT</common.web.version>
         <!-- The Third Part -->
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
         <guava.version>27.1-jre</guava.version>
@@ -39,31 +40,35 @@
         <swagger-annotations.version>1.5.22</swagger-annotations.version>
         <log4j-over-slf4j.version>1.7.25</log4j-over-slf4j.version>
         <persistence-api.version>2.2</persistence-api.version>
+        <apollo-client.version>1.3.0</apollo-client.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
+            <!-- the start of apz cloud -->
+            <dependency>
+                <groupId>com.hcbxwy</groupId>
+                <artifactId>common-util</artifactId>
+                <version>${common.util.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hcbxwy</groupId>
+                <artifactId>common-auth</artifactId>
+                <version>${common.auth.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.hcbxwy</groupId>
+                <artifactId>common-web</artifactId>
+                <version>${common.web.version}</version>
+            </dependency>
+            <!-- the end of apz cloud -->
+            <!-- The Third Party -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
                 <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.hcbxwy</groupId>
-                <artifactId>apz-cloud-common-util</artifactId>
-                <version>${apz.cloud.common.util.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.hcbxwy</groupId>
-                <artifactId>apz-cloud-common-auth</artifactId>
-                <version>${apz.cloud.common.auth.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.hcbxwy</groupId>
-                <artifactId>apz-cloud-common-web</artifactId>
-                <version>${apz.cloud.common.web.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.aspectj</groupId>
@@ -104,6 +109,11 @@
                 <groupId>javax.persistence</groupId>
                 <artifactId>javax.persistence-api</artifactId>
                 <version>${persistence-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.ctrip.framework.apollo</groupId>
+                <artifactId>apollo-client</artifactId>
+                <version>${apollo-client.version}</version>
             </dependency>
 
         </dependencies>

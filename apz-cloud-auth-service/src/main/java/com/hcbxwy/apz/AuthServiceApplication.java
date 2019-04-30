@@ -1,8 +1,8 @@
 /*
  * <ul>
  * <li>项目名称：apz-cloud</li>
- * <li>文件名称：GatewayApplication.java</li>
- * <li>日期：2019/4/24 13:51</li>
+ * <li>文件名称：AuthServiceApplication.java</li>
+ * <li>日期：2019/4/30 15:37</li>
  * <li>Copyright ©2016-2019 广州职赢未来信息科技有限公司 All Rights Reserved.</li>
  * </ul>
  */
@@ -13,16 +13,16 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * 开放网关-应用程序入口
+ * 认证授权服务-应用程序入口
  *
  * @author Billson
- * @since 2019/4/24 13:51
+ * @since 2019/4/30 15:37
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class OpenGatewayApplication {
+public class AuthServiceApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(OpenGatewayApplication.class, args);
+    public static void main(String[] args){
+        SpringApplication.run(AuthServiceApplication.class, args);
     }
 }

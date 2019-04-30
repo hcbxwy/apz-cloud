@@ -18,7 +18,11 @@
         </dependency>
         <dependency>
             <groupId>com.hcbxwy</groupId>
-            <artifactId>apz-cloud-common-web</artifactId>
+            <artifactId>common-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.ctrip.framework.apollo</groupId>
+            <artifactId>apollo-client</artifactId>
         </dependency>
     </dependencies>
 

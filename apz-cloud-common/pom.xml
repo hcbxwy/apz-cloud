@@ -15,8 +15,8 @@
     <description>apz微服务公共模块</description>
 
     <modules>
-        <module>apz-cloud-common-util</module>
-        <module>apz-cloud-common-web</module>
+        <module>common-util</module>
+        <module>common-web</module>
     </modules>
 
     <dependencies>

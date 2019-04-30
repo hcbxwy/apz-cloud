@@ -9,8 +9,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>apz-cloud-common-util</artifactId>
-    <name>apz-cloud-common-util</name>
+    <artifactId>common-util</artifactId>
+    <name>common-util</name>
     <description>apz微服务公共工具</description>
 
     <dependencies>
