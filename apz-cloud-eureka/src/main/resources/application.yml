@@ -10,6 +10,11 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+#    关闭自我保护
+    enable-self-preservation: false
+#    启动主动失效，间隔时间为5 秒
+    eviction-interval-timer-in-ms: 5000
 
 # security
 spring:
