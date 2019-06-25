@@ -8,9 +8,12 @@
  */
 package com.hcbxwy.apz;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 认证授权服务-应用程序入口
@@ -20,9 +23,16 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
+@RestController
 public class AuthServiceApplication {
-
+    @Value("${test.name}")
+    private String name;
     public static void main(String[] args){
         SpringApplication.run(AuthServiceApplication.class, args);
+    }
+
+    @GetMapping("/test")
+    public String test(){
+        return name;
     }
 }
