@@ -33,7 +33,7 @@
         <common.web.version>0.0.1-SNAPSHOT</common.web.version>
         <!-- The Third Part -->
         <aspectjweaver.version>1.8.10</aspectjweaver.version>
-        <guava.version>27.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <fastjson.version>1.2.57</fastjson.version>
         <commons-lang3.version>3.9</commons-lang3.version>
         <commons-io.version>2.6</commons-io.version>
