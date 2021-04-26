@@ -36,7 +36,7 @@
         <guava.version>27.1-jre</guava.version>
         <fastjson.version>1.2.57</fastjson.version>
         <commons-lang3.version>3.9</commons-lang3.version>
-        <commons-io.version>2.6</commons-io.version>
+        <commons-io.version>2.7</commons-io.version>
         <swagger-annotations.version>1.5.22</swagger-annotations.version>
         <log4j-over-slf4j.version>1.7.25</log4j-over-slf4j.version>
         <persistence-api.version>2.2</persistence-api.version>
